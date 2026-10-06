@@ -1,7 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-    <body>
-     
-
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad Usuarios</title>
+</head>
+<body>
+    <h1>¿Qué te gustaría hacer hoy?</h1>
+ 
+    <p>Nombre: <input type="text" id="nombre"></p>
+    <p>Edad: <input type="number" id="edad"></p>
+    <p>Sexo:
+        <select id="sexo">
+            <option value="">Selecciona</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+    </p>
+    <button onclick="mostrar()">Ver resultado</button>
+ 
+    <p id="demo"></p>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f1f5;
+            display: flex;
+            justify-content: center;
+            padding: 30px 15px;
+        }
+        .caja {
+            background-color: white;
+            width: 100%;
+            max-width: 380px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        h1 {
+            font-size: 22px;
+            color: #1f3a4d;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #1f3a4d;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            font-size: 16px;
+            border: 1px solid #9bb3c1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #2a7ab0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1f5f8a;
+        }
+        #demo {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #1f3a4d;
+        }
+        #demo img {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function mostrar() {
+            let nombre = document.getElementById("nombre").value;
+            let edad = Number(document.getElementById("edad").value);
+            let sexo = document.getElementById("sexo").value;
+            let text = "";
+ 
+            if (nombre === "" || edad <= 0 || sexo === "") {
+                text = "Completa todos los datos.";
+            } else if (edad < 18) {
+                if (sexo === "hombre") {
+                    text = nombre + ", tu actividad es: Cine <br><img src='img/cine.jpg' width='300'>";
+                } else {
+                    text = nombre + ", tu actividad es: Barbie <br><img src='img/barbie.jpg' width='300'>";
+                }
+            } else if (edad <= 30) {
+                if (sexo === "hombre") {
+                    text = nombre + ", tu actividad es: Gym <br><img src='img/gym.jpg' width='300'>";
+                } else {
+                    text = nombre + ", tu actividad es: Spa <br><img src='img/spa.jpg' width='300'>";
+                }
+            } else {
+                text = nombre + ", no hay actividad para mayores de 30.";
+            }
+ 
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</body>
+</html>
+ 
