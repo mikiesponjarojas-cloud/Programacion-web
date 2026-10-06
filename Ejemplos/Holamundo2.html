@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexo Tech</title>
+  <link rel="icon" href="logo1.jpeg" type="image/jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --indigo: #1B2A4A;
+      --indigo-light: #2A3E68;
+      --teal: #00B4A6;
+      --amber: #F2A93B;
+      --bg: #EEF2F8;
+      --card-bg: #FFFFFF;
+      --text-dark: #1C1F26;
+      --text-muted: #5B6472;
+      --border-soft: #DCE3EE;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      text-align: center;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Sora', Arial, sans-serif;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      background-color: var(--indigo);
+      background-image:
+        radial-gradient(circle at 12% 30%, rgba(0,180,166,0.35) 0, rgba(0,180,166,0) 40%),
+        radial-gradient(circle at 85% 70%, rgba(0,180,166,0.25) 0, rgba(0,180,166,0) 45%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 90px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 90px);
+      padding: 44px 20px 38px;
+      color: white;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(0,180,166,0.4), 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .logo {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 22px 0 6px 0;
+      font-size: 2.4em;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .nexo {
+      color: #ffffff;
+    }
+
+    .tech {
+      color: var(--teal);
+    }
+
+    h2 {
+      margin: 4px 0 2px 0;
+      font-size: 1.15em;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+    }
+
+    header p {
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+      font-size: 0.95em;
+    }
+
+    header a.cta {
+      color: var(--indigo);
+      background-color: var(--teal);
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 11px 26px;
+      border-radius: 24px;
+      margin-top: 20px;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    header a.cta:hover {
+      background-color: #00d1c1;
+      transform: translateY(-1px);
+    }
+
+    /* ---------- Node divider ---------- */
+    .node-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 34px 0 26px;
+    }
+
+    .node-divider .line {
+      height: 1px;
+      width: 60px;
+      background: var(--border-soft);
+    }
+
+    .node-divider .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* ---------- Main / Catalog ---------- */
+    main {
+      padding: 0 20px 50px 20px;
+    }
+
+    h3 {
+      color: var(--indigo);
+      font-size: 1.5em;
+      margin-bottom: 4px;
+    }
+
+    main > p.subtitle {
+      color: var(--text-muted);
+      margin: 0 0 28px 0;
+      font-size: 0.95em;
+    }
+
+    table {
+      background-color: var(--card-bg);
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 78%;
+      max-width: 900px;
+      box-shadow: 0 6px 24px rgba(27,42,74,0.12);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: var(--indigo);
+      color: white;
+      padding: 14px 12px;
+      font-family: 'Sora', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    td {
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text-dark);
+      padding: 14px 12px;
+      font-size: 0.95em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #F5F8FC;
+    }
+
+    tbody tr:hover {
+      background-color: #EAF6F5;
+    }
+
+    td img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #F5F8FC;
+      padding: 4px;
+      border: 1px solid var(--border-soft);
+    }
+
+    td.price {
+      font-weight: 600;
+      color: var(--indigo);
+    }
+
+    td.price span {
+      background: rgba(242,169,59,0.18);
+      color: #9a6a12;
+      padding: 3px 10px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    td a.ver-mas {
+      color: var(--teal);
+      background-color: transparent;
+      border: 1.5px solid var(--teal);
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85em;
+      padding: 6px 16px;
+      border-radius: 18px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    td a.ver-mas:hover {
+      background-color: var(--teal);
+      color: white;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background-color: var(--indigo);
+      color: rgba(255,255,255,0.85);
+      padding: 28px 20px 20px;
+      margin-top: 10px;
+      font-size: 0.9em;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--amber));
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    footer img {
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      margin-bottom: 14px;
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-wrap">
+      <img class="logo" src="logo1.jpeg" alt="Logo de Nexo Tech">
+    </div>
+    <h1><span class="nexo">Nexo</span> <span class="tech">Tech</span></h1>
+    <h2>Conecta con el futuro</h2>
+    <p>Tu nexo con la tecnología del mañana</p>
+    <a class="cta" href="https://www.youtube.com/?gl=ES&themeRefresh=1">Visita el canal oficial</a>
+  </header>
+
+  <main>
+    <div class="node-divider">
+      <span class="line"></span><span class="dot"></span><span class="line"></span>
+    </div>
+
+    <h3>Catálogo de productos</h3>
+    <p class="subtitle">Los equipos más buscados, en un solo lugar</p>
+
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th></th>
+      </tr>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td><img src="asus-tuf-a15.png" alt="Laptop Asus TUF A15"></td>
+        <td>Laptop Asus TUF A15</td>
+        <td class="price"><span>$25,000</span></td>
+        <td><a class="ver-mas" href="https://www.asus.com/laptops/tuf-a15/" target="_blank">Ver más</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><img src="dell-xps13.png" alt="Laptop Dell XPS 13"></td>
+        <td>Laptop Dell XPS 13</td>
+        <td class="price"><span>$30,000</span></td>
+        <td><a class="ver-mas" href="https://www.dell.com/en-us/shop/dell-laptops/xps-13-9320-laptop/spd/xps-13-9320-laptop" target="_blank">Ver más</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><img src="macbook-air.png" alt="Laptop MacBook Air"></td>
+        <td>Laptop MacBook Air</td>
+        <td class="price"><span>$40,000</span></td>
+        <td><a class="ver-mas" href="https://www.apple.com/macbook-air/" target="_blank">Ver más</a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><img src="samsung-s25-ultra.png" alt="Samsung S25 Ultra"></td>
+        <td>Samsung S25 Ultra</td>
+        <td class="price"><span>$22,000</span></td>
+        <td><a class="ver-mas" href="https://www.samsung.com/laptops/s25-ultra/" target="_blank">Ver más</a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><img src="s26ultra.png" alt="Samsung S26 Ultra"></td>
+        <td>Samsung S26 Ultra</td>
+        <td class="price"><span>$35,000</span></td>
+        <td><a class="ver-mas" href="https://www.samsung.com/laptops/s26-ultra/" target="_blank">Ver más</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <img src="samsung-s25-ultra.png" alt="imagen hardware" usemap="#workmap" width="300" height="200">
+    <map name="workmap">
+      <area shape="rect" coords="30,40,500,500" alt="linux" href="https://www.samsung.com/">
+    </map>
+
+    <p>&copy; 2026 Nexo Tech. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florería</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="floreria.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a class="brand" href="index.html">Florería</a>
+        <nav aria-label="Principal">
+            <ul>
+                <li><a>Inicio</a></li>
+                <li><a href="floreria.html" aria-current="page">Florería</a></li>
+                <li><a>Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Flores frescas para cada ocasión</h1>
+                <p>En nuestra florería encontrarás una amplia variedad de flores frescas y hermosos arreglos florales para regalar, celebrar o simplemente alegrar tu casa.</p>
+                <a class="btn" href="#productos">Ver productos</a>
+            </div>
+            <img class="hero-img" src="img/flores.jpg" alt="Flores frescas">
+        </section>
+
+        <section class="productos" id="productos">
+            <h2>Nuestros productos</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Disponibilidad</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Imagen"><img src="img/ramo-rosas.jpg" alt="Ramo de rosas"></td>
+                        <td data-label="Producto" class="nombre">Ramo de rosas</td>
+                        <td data-label="Precio" class="precio">$20</td>
+                        <td data-label="Disponibilidad"><span class="badge">En stock</span></td>
+                        <td data-label="Acción"><button type="button">Comprar</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Imagen"><img src="img/arreglo-tulipanes.jpg" alt="Arreglo de tulipanes"></td>
+                        <td data-label="Producto" class="nombre">Arreglo de tulipanes</td>
+                        <td data-label="Precio" class="precio">$25</td>
+                        <td data-label="Disponibilidad"><span class="badge">En stock</span></td>
+                        <td data-label="Acción"><button type="button">Comprar</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Imagen"><img src="img/orquidea-maceta.jpg" alt="Orquídea en maceta"></td>
+                        <td data-label="Producto" class="nombre">Orquídea en maceta</td>
+                        <td data-label="Precio" class="precio">$30</td>
+                        <td data-label="Disponibilidad"><span class="badge">En stock</span></td>
+                        <td data-label="Acción"><button type="button">Comprar</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Imagen"><img src="img/ramo-girasoles.jpg" alt="Ramo de girasoles"></td>
+                        <td data-label="Producto" class="nombre">Ramo de girasoles</td>
+                        <td data-label="Precio" class="precio">$15</td>
+                        <td data-label="Disponibilidad"><span class="badge">En stock</span></td>
+                        <td data-label="Acción"><button type="button">Comprar</button></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Imagen"><img src="img/arreglo-lirios.jpg" alt="Arreglo de lirios"></td>
+                        <td data-label="Producto" class="nombre">Arreglo de lirios</td>
+                        <td data-label="Precio" class="precio">$28</td>
+                        <td data-label="Disponibilidad"><span class="badge">En stock</span></td>
+                        <td data-label="Acción"><button type="button">Comprar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <img src="img/horizontal.jpg" alt="Arreglo floral">
+        <p class="footer-lema">Visítanos y descubre la belleza de nuestras flores.</p>
+        <p class="copy">&copy; 2026 Florería. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
