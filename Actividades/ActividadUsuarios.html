@@ -5,7 +5,8 @@
     <title>Actividad Usuarios</title>
 </head>
 <body>
-    <h1>¿Qué te gustaría hacer hoy?</h1>
+    <div class="caja">
+        <h1>¿Qué te gustaría hacer hoy?</h1>
  
     <p>Nombre: <input type="text" id="nombre"></p>
     <p>Edad: <input type="number" id="edad"></p>
@@ -19,68 +20,113 @@
     <button onclick="mostrar()">Ver resultado</button>
  
     <p id="demo"></p>
- <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e8f1f5;
-            display: flex;
-            justify-content: center;
-            padding: 30px 15px;
-        }
-        .caja {
-            background-color: white;
-            width: 100%;
-            max-width: 380px;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            text-align: center;
-        }
-        h1 {
-            font-size: 22px;
-            color: #1f3a4d;
-        }
-        label {
-            display: block;
-            text-align: left;
-            margin-top: 12px;
-            font-weight: bold;
-            color: #1f3a4d;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 4px;
-            font-size: 16px;
-            border: 1px solid #9bb3c1;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            margin-top: 18px;
-            padding: 10px;
-            font-size: 16px;
-            color: white;
-            background-color: #2a7ab0;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #1f5f8a;
-        }
-        #demo {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #1f3a4d;
-        }
-        #demo img {
-            width: 100%;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-    </style>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f1f5 0%, #d4e4ec 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    margin: 0;
+  }
+
+  .caja {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(31, 58, 77, 0.15);
+    text-align: center;
+    border-top: 4px solid #2a7ab0;
+  }
+
+  h1 {
+    font-size: 24px;
+    color: #1f3a4d;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  h1::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #2a7ab0;
+    margin: 10px auto 20px;
+    border-radius: 2px;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1f3a4d;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    font-size: 15px;
+    border: 1.5px solid #c3d4dd;
+    border-radius: 8px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    font-family: inherit;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: #2a7ab0;
+    box-shadow: 0 0 0 3px rgba(42, 122, 176, 0.15);
+  }
+
+  button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #2a7ab0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background-color 0.25s ease, transform 0.1s ease;
+  }
+  
+  button:hover {
+    background-color: #1f5f8a;
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  #demo {
+    margin-top: 22px;
+    font-size: 17px;
+    color: #1f3a4d;
+    line-height: 1.5;
+  }
+
+  #demo img {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+</style>
     <script>
         function mostrar() {
             let nombre = document.getElementById("nombre").value;
@@ -92,15 +138,15 @@
                 text = "Completa todos los datos.";
             } else if (edad < 18) {
                 if (sexo === "hombre") {
-                    text = nombre + ", tu actividad es: Cine <br><img src='img/cine.jpg' width='300'>";
+                    text = nombre + ", tu actividad es: Cine <br><img src='../img/cine.jpg' width='300'>";
                 } else {
-                    text = nombre + ", tu actividad es: Barbie <br><img src='img/barbie.jpg' width='300'>";
+                    text = nombre + ", tu actividad es: Barbie <br><img src='../img/barbie.jpg' width='300'>";
                 }
             } else if (edad <= 30) {
                 if (sexo === "hombre") {
-                    text = nombre + ", tu actividad es: Gym <br><img src='img/gym.jpg' width='300'>";
+                    text = nombre + ", tu actividad es: Gym <br><img src='../img/gym.jpg' width='300'>";
                 } else {
-                    text = nombre + ", tu actividad es: Spa <br><img src='img/spa.jpg' width='300'>";
+                    text = nombre + ", tu actividad es: Spa <br><img src='../img/spa.jpg' width='300'>";
                 }
             } else {
                 text = nombre + ", no hay actividad para mayores de 30.";
